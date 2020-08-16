@@ -2,6 +2,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 
 const ExpressConfig = require("./express-config");
+const DBConfig = require("./db-config");
 
 class AppConfig {
 	constructor(app) {
@@ -25,9 +26,18 @@ class AppConfig {
 		new ExpressConfig(this.app).setAppEngine();
 	}
 
+	loadDBConfig() {
+		const sequelizeClient = DBConfig.getSequelizeClient();
+		this.app.use((req, res, next)=> {
+			req.headers.sequelize = sequelizeClient;
+			next();
+		});
+	}
+
 	includeConfig() {
 		this.loadAppLevelConfig();
 		this.loadExpressConfig();
+		this.loadDBConfig();
 	}
 }
 
