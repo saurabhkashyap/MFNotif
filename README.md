@@ -96,4 +96,7 @@ For running application use
 ```npm
 npm start
 ```
-Server will listen on PORT specified on `.env` file or `3000` by defauld.
+Server will listen on PORT specified on `.env` file or `3000` by default.
+
+### API Documentation
+Check API documentation [here](https://documenter.getpostman.com/view/4916869/T1LQgktt?version=latest) in Postman Collection.
