@@ -42,7 +42,7 @@ class JWT {
 			error.status = CONSTANTS.SERVER_UNAUTHORIZED_CODE;
 			return next(error);
 		}
-		req.headers.user = payload;
+		req.headers.payload = payload;
 
 		next();
 	}
