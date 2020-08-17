@@ -1,4 +1,5 @@
 /* HTTP status codes */
+module.exports.SERVER_UNAUTHORIZED_CODE = 401;
 module.exports.SERVER_ERROR_HTTP_CODE = 412;
 module.exports.SERVER_NOT_ALLOWED_HTTP_CODE = 503;
 module.exports.SERVER_OK_HTTP_CODE = 200;

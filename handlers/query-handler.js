@@ -34,6 +34,15 @@ class QueryHandler {
 		};
 		return getDataList(db.OrderStatus, where);
 	}
+	getSellerDetails(db, where) {
+		return getSingleRow(db.Seller, where);
+	}
+	updateSellerDetails(db, sellerId, dataToUpdate) {
+		const where = {
+			id: sellerId
+		};
+		return updateData(db.Seller, where, dataToUpdate);
+	}
 }
 
 module.exports = new QueryHandler();
