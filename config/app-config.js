@@ -1,5 +1,6 @@
 const bodyParser = require("body-parser");
 const cors = require("cors");
+const uuid = require("node-uuid");
 
 const ExpressConfig = require("./express-config");
 const DBConfig = require("./db-config");
@@ -20,6 +21,13 @@ class AppConfig {
 		this.app.use(
 			cors()
 		);
+		this.app.use((req, res, next)=> {
+			if (req && !req.headers["x-correlation-id"]) {
+				req.x_correlation_id = uuid();
+				res.setHeader("X-Correlation-ID", req.x_correlation_id);
+			}
+			next();
+		})
 	}
 
 	loadExpressConfig() {

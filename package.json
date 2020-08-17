@@ -22,11 +22,15 @@
   "dependencies": {
     "@sendgrid/mail": "^7.2.3",
     "body-parser": "^1.19.0",
+    "bull": "^3.18.0",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "lodash": "latest",
+    "moment": "latest",
     "mysql2": "^2.1.0",
-    "sequelize": "^6.3.4",
+    "node-uuid": "^1.4.8",
+    "sequelize": "5.19.1",
     "twilio": "^3.48.2"
   },
   "devDependencies": {

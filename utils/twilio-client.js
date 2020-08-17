@@ -5,6 +5,7 @@ class TwilioClient {
 		this.accountSid = process.env.TWILIO_ACCOUNT_SID;
 		this.authToken = process.env.TWILIO_AUTH_TOKEN;
 		this.twilioNumber = process.env.TWILIO_NUMBER;
+		this.twilioWhatsAppNumber = process.env.TWILIO_WHATSAPP_NUMBER;
 
 		this.client = twilio(this.accountSid, this.authToken);
 	}
@@ -17,18 +18,26 @@ class TwilioClient {
 				body: msgBody
 			}).then(message => {
 				console.log(message);
-			}).done();
+				return true;
+			}).catch(err=> {
+				console.log(err);
+				return false;
+			});
 	}
 	sendWhatsAppMessage(msgTo, msgBody) {
 		this.client
 			.messages
 			.create({
-				from: `whatsapp:${this.twilioNumber}`,
+				from: `whatsapp:${this.twilioWhatsAppNumber}`,
 				to: `whatsapp:${msgTo}`,
 				body: msgBody
 			}).then(message => {
 				console.log(message);
-			}).done();
+				return true;
+			}).catch(err=> {
+				console.log(err);
+				return false;
+			});
 	}
 }
 
