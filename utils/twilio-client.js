@@ -17,7 +17,6 @@ class TwilioClient {
 				to: msgTo,
 				body: msgBody
 			}).then(message => {
-				console.log(message);
 				return true;
 			}).catch(err=> {
 				console.log(err);
@@ -32,10 +31,8 @@ class TwilioClient {
 				to: `whatsapp:${msgTo}`,
 				body: msgBody
 			}).then(message => {
-				console.log(message);
 				return true;
 			}).catch(err=> {
-				console.log(err);
 				return false;
 			});
 	}

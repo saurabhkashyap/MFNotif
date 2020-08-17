@@ -18,7 +18,6 @@ const sendEmail = async (jobData)=> {
 };
 
 const sendSMS = async (jobData)=> {
-	console.log(jobData);
 	const { recipient, text } = jobData;
 	await TwilioClient.sendShortMessage(recipient, text);
 };

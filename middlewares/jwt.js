@@ -34,7 +34,6 @@ class JWT {
 			error.status = CONSTANTS.SERVER_UNAUTHORIZED_CODE;
 			return next(error);
 		}
-		console.log(token);
 		const payload = await JWTClient.verifyJWTToken(token).catch(err => err);
 		console.log(payload);
 		if(isError(payload)) {

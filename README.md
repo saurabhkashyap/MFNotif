@@ -65,7 +65,7 @@ SENDGRID_SENDER_EMAIL = ''
  - [cors](https://www.npmjs.com/package/cors) - CORS is a node.js package for providing a Connect/Express middleware 
  that can be used to enable CORS with various options.
  - [md5](https://www.npmjs.com/package/md5) - a JavaScript function for hashing messages with MD5.
- - [node-uuid](https://www.npmjs.com/package/node-uuid) - For the creation of Universal Unique IDs
+ - [node-uuid](https://www.npmjs.com/package/uuid) - For the creation of Universal Unique IDs
  
 ### Application Structure
  - `.env` - This file contains all environment variables
