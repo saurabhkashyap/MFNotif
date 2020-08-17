@@ -10,3 +10,5 @@ package-lock.json
 
 # IDE - WebStorm
 .idea/
+.idea
+.idea/*
