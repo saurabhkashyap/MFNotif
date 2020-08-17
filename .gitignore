@@ -3,11 +3,11 @@ test
 
 # dependencies
 node_modules/
+package-lock.json
 
 #environments
 .env
 
 # IDE - WebStorm
-/.idea
+.idea
 
-package-*.js
