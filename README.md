@@ -1,14 +1,14 @@
 # MFNotif
 Notification Service
 
-### Installation
+## Installation
 
 Use the package manager [npm](https://www.npmjs.com/) to install dependency packages
 ```npm
 npm install
 ```
-#### Environment Setup
-Create .env file with below environment variables
+## Environment Setup
+Create `.env` file with below environment variables
 ```dotenv
 NODE_ENV = 'development'
 NODE_SERVER_HOST = 0.0.0.0
@@ -41,9 +41,9 @@ SENDGRID_API_KEY = ''
 SENDGRID_SENDER_EMAIL = ''
 ```
 
-### Code Overview
+## Code Overview
 
-#### Dependencies
+### Dependencies
  - [dotenv](https://www.npmjs.com/package/dotenv) - Dotenv is a zero-dependency module that loads environment variables 
  from a .env file into process.env .
  - [expressjs](https://www.npmjs.com/package/express) - The server for handling and routing HTTP requests
@@ -67,7 +67,7 @@ SENDGRID_SENDER_EMAIL = ''
  - [md5](https://www.npmjs.com/package/md5) - a JavaScript function for hashing messages with MD5.
  - [node-uuid](https://www.npmjs.com/package/node-uuid) - For the creation of Universal Unique IDs
  
-#### Application Structure
+### Application Structure
  - `.env` - This file contains all environment variables
  - `index.js` - The entry point to the Application.
  - `server.js` - This file defines our express server and connects it to Mysql using sequelize ORM. It also requires 
@@ -81,12 +81,12 @@ SENDGRID_SENDER_EMAIL = ''
  - `utils/` - This folder contains the all third party clients, constants, support files
  - `sequelize/models/` - This folder contains the schema definitions for our Sequelize models.
  
-#### Error Handling
-in `middlewares/catch-errors.js`, I define a error handling middleware for handling API Validation Errors. 
-This middleware will respond with 500 status code by default if any error status code not there to have error messages 
-the client can understand. and `config/app-config` handles if any `unhandledRejections` was there in the application.
+### Error Handling
+in `middlewares/catch-errors.js`, I defined a error handling middleware for handling API Validation Errors. 
+This middleware will respond with 500 status code by default(if error status code not exists) to have error messages 
+the client can understand. and `config/app-config` handles if any `unhandledRejection`'s was there in the application.
 
-#### Authentication
+### Authentication
 Requests are authenticated using the Authorization header with a valid JWT. I defined a express middleware 
 for validating the jwt token in `middlewares/jwt.js` file. It will return a 401 status code if the request 
 cannot be authenticated. The payload of the JWT can then be accessed from req.headers.payload in the endpoint.
